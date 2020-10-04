@@ -70,7 +70,7 @@ def error_404_view(request, exception):
     })))
 
 
-def error_500_view(request):
+def error_500_view(request, exception):
     t = loader.get_template('500.html')
     return HttpResponseServerError(t.render(RequestContext(request, {
         'title': 'Server error',
